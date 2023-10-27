@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Impulse Shopping Preventer",
+  "version": "1.0",
+  "description": "Displays a popup when the user attempts to make an online purchase.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "webRequest",
+    "webNavigation",
+    "notifications"
+  ],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://bluebottlecoffee.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
